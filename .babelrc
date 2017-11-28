@@ -1,0 +1,25 @@
+{
+  "presets": [
+    "flow",
+    ["es2015", {
+      "modules": false
+    }],
+    "react",
+    "stage-0"
+  ],
+  "compact": "true",
+  "plugins": [
+    ["react-loadable/babel", {
+      "server": true,
+      "webpack": true
+    }],
+    "babel-plugin-styled-components"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source"
+      ]
+    }
+  }
+}
