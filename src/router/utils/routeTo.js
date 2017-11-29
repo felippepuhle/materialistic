@@ -3,7 +3,7 @@ import routes from '../routes';
 
 import type { RouteType, RouteParamsType } from './types';
 
-const findRouteByName = (name: string, routes: Array<RouteType>): RouteType =>
+const findPathByRouteName = (name: string, routes: Array<RouteType>): ?string =>
   routes
     .map(subroute => {
       if (subroute.name === name) {
@@ -11,7 +11,7 @@ const findRouteByName = (name: string, routes: Array<RouteType>): RouteType =>
       }
 
       if (subroute.routes) {
-        return findRouteByName(name, subroute.routes);
+        return findPathByRouteName(name, subroute.routes);
       }
     })
     .filter(subroute => subroute !== undefined)
@@ -25,8 +25,13 @@ const replaceParams = (path: string, params: RouteParamsType): string => {
   return path;
 };
 
-const routeTo = (name: string, params: RouteParamsType = {}): string => {
-  return replaceParams(findRouteByName(name, routes), params);
-}
+const routeTo = (name: string, params: RouteParamsType = {}): ?string => {
+  const path = findPathByRouteName(name, routes);
+  if (!path) {
+    return null;
+  }
+
+  return replaceParams(path, params);
+};
 
 export default routeTo;

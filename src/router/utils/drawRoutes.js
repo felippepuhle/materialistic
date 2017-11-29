@@ -1,11 +1,8 @@
-// @flow
 import * as React from 'react';
 import { Route } from 'react-router-dom';
 
-import type { RouteType } from './types';
-
-const drawRoutes = (routes: Array<RouteType>): Array<React.Element<*>> =>
- routes.map((route, index) => (
+const drawRoutes = routes =>
+  routes.map((route, index) => (
     <Route
       key={index}
       path={route.path}

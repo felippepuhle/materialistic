@@ -1,14 +1,9 @@
-// @flow
 import * as React from 'react';
 
 import AppRouter from './router/AppRouter';
 
-type Props = {};
-
-export default class App extends React.PureComponent<Props> {
+export default class App extends React.PureComponent {
   render() {
-    return (
-      <AppRouter />
-    );
+    return <AppRouter />;
   }
 }

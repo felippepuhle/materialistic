@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Loadable from 'react-loadable';
 
-const createLoadable = (component: Promise<React.Element<*>>): React.Element<*> =>
+const createLoadable = (component: Promise<React.Node>): React.Node =>
   Loadable({
     loader: () => component,
     loading() {
