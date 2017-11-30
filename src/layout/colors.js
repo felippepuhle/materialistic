@@ -1,5 +1,6 @@
 const Colors = {
-  silver: '#FAFAFA',
+  snow: '#FAFAFA',
+  silver: '#AAAAAA',
   grey: '#404040',
 
   main: '#f14d23',

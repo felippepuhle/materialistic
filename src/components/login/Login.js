@@ -1,14 +1,13 @@
 import * as React from 'react';
 
+import { Button, TextInput } from '../common';
+
 const Login = () => (
   <div>
-    Entrar com facebook
-    <br />ou<br />
-    Digite seu usuário<br />
-    Digite sua senha <br />
-    <br />
-    <br />
-    Entrar <br />
+    <TextInput placeholder="Digite seu usuário" />
+    <TextInput placeholder="Digite sua senha" />
+
+    <Button>Entrar</Button>
   </div>
 );
 

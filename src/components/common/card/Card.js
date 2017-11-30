@@ -2,13 +2,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../../../layout';
-
 const Wrapper = styled.div`
   display: block;
-  padding: ${Layout.spacing};
+  padding: 20px;
   background-color: #fff;
-  border-radius: ${Layout.radius};
+  border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.125);
 `;
 

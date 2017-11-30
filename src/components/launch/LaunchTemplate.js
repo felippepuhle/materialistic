@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { Card, Logo } from '../common';
-import Layout, { Colors } from '../../layout';
+import { Colors } from '../../layout';
 import drawRoutes from '../../router/utils/drawRoutes';
 
 import type { RouteType } from '../../router/utils/types';
@@ -11,11 +11,11 @@ import type { RouteType } from '../../router/utils/types';
 const Wrapper = styled.div`
   display: flex;
   flex: 1;
-  background-color: ${Colors.silver};
+  background-color: ${Colors.snow};
 `;
 
-const Content = styled.div`
-  transition: ${Layout.transition};
+const Container = styled.div`
+  transition: all 1000ms cubic-bezier(0.2, 1, 0.22, 1);
   position: fixed;
   z-index: 2;
   top: 0;
@@ -30,8 +30,8 @@ const Content = styled.div`
   transform-origin: center center;
 `;
 
-const LogoWrapper = styled.div`
-  transition: ${Layout.transition};
+const Header = styled.div`
+  transition: all 1000ms cubic-bezier(0.2, 1, 0.22, 1);
   transition-delay: 500ms;
   position: relative;
   z-index: 1;
@@ -40,16 +40,36 @@ const LogoWrapper = styled.div`
   bottom: ${props => (props.initialized ? '0px' : '-100px')};
 `;
 
-const CardWrapper = styled.div`
+const Content = styled.div`
   position: relative;
   z-index: 2;
   width: 300px;
   max-width: 100%;
-  min-height: 300px;
+`;
+
+const Footer = styled.div`
+  transition: all 1000ms linear;
+  transition-delay: 300ms;
+  position: relative;
+  z-index: 1;
+  opacity: ${props => (props.initialized ? 1 : 0)};
+  color: #fff;
+  margin-top: 15px;
+`;
+
+const FooterLink = styled.a`
+  margin: 0px 5px;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Background = styled.div`
-  transition: ${Layout.transition};
+  transition: all 1000ms cubic-bezier(0.2, 1, 0.22, 1);
   transition-delay: 500ms;
   position: fixed;
   z-index: 1;
@@ -84,15 +104,23 @@ class LaunchTemplate extends React.PureComponent<Props, State> {
 
     return (
       <Wrapper>
-        <Content initialized={initialized}>
-          <LogoWrapper initialized={initialized}>
+        <Container initialized={initialized}>
+          <Header initialized={initialized}>
             <Logo />
-          </LogoWrapper>
+          </Header>
 
-          <CardWrapper>
+          <Content>
             <Card>{drawRoutes(this.props.routes)}</Card>
-          </CardWrapper>
-        </Content>
+          </Content>
+
+          <Footer initialized={initialized}>
+            <FooterLink href="#">Suporte</FooterLink>
+            -
+            <FooterLink href="#">Termos de uso</FooterLink>
+            -
+            <FooterLink href="#">Política de privacidade</FooterLink>
+          </Footer>
+        </Container>
 
         <Background initialized={initialized} />
       </Wrapper>
