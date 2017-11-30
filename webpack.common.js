@@ -20,20 +20,18 @@ module.exports = {
   output: {
     path: paths.build,
     filename: '[chunkhash].js',
-    publicPath: PUBLIC_PATH
+    publicPath: PUBLIC_PATH,
   },
 
   loaders: {
     babel: {
       test: /\.js?$/,
       use: 'babel-loader',
-      include: [
-        paths.src,
-      ],
+      include: [paths.src],
     },
     assets: {
       test: /\.(ttf|otf|png|jpg)$/,
-      use: ['url-loader']
+      use: ['url-loader'],
     },
   },
 
@@ -43,7 +41,7 @@ module.exports = {
       safe: true,
     },
     html: {
-      template: './src/index.html',
+      template: './src/html/index.html',
     },
   },
 };
