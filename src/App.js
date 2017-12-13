@@ -11,7 +11,7 @@ injectGlobal`
     margin: 0;
     padding: 0;
     display: flex;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
