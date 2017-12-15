@@ -35,7 +35,6 @@ const Header = styled.div`
   transition-delay: 500ms;
   position: relative;
   z-index: 1;
-  width: 180px;
   margin-bottom: 10px;
   bottom: ${props => (props.initialized ? '0px' : '-100px')};
 `;
@@ -106,7 +105,7 @@ class LaunchTemplate extends React.PureComponent<Props, State> {
       <Wrapper>
         <Container initialized={initialized}>
           <Header initialized={initialized}>
-            <Logo />
+            <Logo width={180} />
           </Header>
 
           <Content>

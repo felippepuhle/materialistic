@@ -2,7 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Layout, { Colors } from '../../../layout';
-import BackgroundImage from './background.jpg';
+import SidebarHeader from './common/SidebarHeader';
+import SidebarProfile from './common/SidebarProfile';
+import BackgroundImage from './assets/background.jpg';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -37,10 +39,21 @@ const OverlayBackground = styled.div`
   opacity: 0.8;
 `;
 
+const Content = styled.div`
+  position: relative;
+  z-index: 3;
+  padding: ${Layout.spacing};
+`;
+
 const Sidebar = () => (
   <Wrapper>
     <ImageBackground />
     <OverlayBackground />
+
+    <Content>
+      <SidebarHeader />
+      <SidebarProfile />
+    </Content>
   </Wrapper>
 );
 

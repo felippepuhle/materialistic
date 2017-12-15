@@ -1,4 +1,6 @@
 const Colors = {
+  white: '#FFFFFF',
+
   snow: '#FAFAFA',
   silver: '#AAAAAA',
   grey: '#404040',
