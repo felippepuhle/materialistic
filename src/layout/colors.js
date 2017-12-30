@@ -1,4 +1,5 @@
 const Colors = {
+  transparent: 'transparent',
   white: '#FFFFFF',
 
   snow: '#FAFAFA',

@@ -12,6 +12,8 @@ const Wrapper = styled.div`
   margin-bottom: ${Layout.spacing};
   padding-top: ${Layout.spacing};
   padding-bottom: ${Layout.spacing};
+  padding-left: 5px;
+  padding-right: 5px;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: rgba(255, 255, 255, 0.3);

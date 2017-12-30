@@ -5,3 +5,4 @@ export Form from './Form/Form';
 export TextInput from './Form/TextInput';
 export Loading from './Loading/Loading';
 export Logo from './Logo/Logo';
+export MaterialIcon from './MaterialIcon/MaterialIcon';

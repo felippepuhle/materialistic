@@ -1,8 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import routeTo from '../../../router/utils/routeTo';
 import Layout, { Colors } from '../../../layout';
 import SidebarHeader from './common/SidebarHeader';
+import SidebarItem from './common/SidebarItem';
 import SidebarProfile from './common/SidebarProfile';
 import BackgroundImage from './assets/background.jpg';
 
@@ -53,6 +55,43 @@ const Sidebar = () => (
     <Content>
       <SidebarHeader />
       <SidebarProfile />
+
+      <SidebarItem icon="dashboard" title="Dashboard" url={routeTo('dashboard')} active />
+
+      <SidebarItem
+        icon="apps"
+        title="Components"
+        subitems={[
+          {
+            title: 'Buttons',
+            url: routeTo('dashboard'),
+          },
+          {
+            title: 'Grid System',
+            url: routeTo('dashboard'),
+          },
+          {
+            title: 'Panels',
+            url: routeTo('dashboard'),
+          },
+          {
+            title: 'Sweet Alert',
+            url: routeTo('dashboard'),
+          },
+          {
+            title: 'Notifications',
+            url: routeTo('dashboard'),
+          },
+          {
+            title: 'Icons',
+            url: routeTo('dashboard'),
+          },
+          {
+            title: 'Typography',
+            url: routeTo('dashboard'),
+          },
+        ]}
+      />
     </Content>
   </Wrapper>
 );
