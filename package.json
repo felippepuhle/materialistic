@@ -33,6 +33,7 @@
     "eslint-plugin-react": "^7.4.0",
     "flow-bin": "^0.66.0",
     "flow-typed": "^2.2.3",
+    "gh-pages": "^1.1.0",
     "html-webpack-plugin": "^2.30.1",
     "lint-staged": "^4.3.0",
     "pre-commit": "^1.2.2",
@@ -58,6 +59,8 @@
   "scripts": {
     "build": "cp .env.prod .env && webpack -p --config webpack.prod.config.js --progress --profile --colors",
     "build:hml": "cp .env.dev .env && webpack -p --config webpack.prod.config.js --progress --profile --colors",
+    "demo:gh-pages": "gh-pages -d build/",
+    "demo:publish": "npm run build:hml && npm run demo:gh-pages",
     "lint": "eslint --ext js src",
     "lint:css": "stylelint './src/**/*.js'",
     "lint:staged": "lint-staged",
