@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Button, Form, TextInput, Loading } from '../common';
 import routeTo from '../../router/utils/routeTo';
+import { login } from '../../utils/auth';
 
 import type { ContextRouter } from 'react-router-dom';
 
@@ -22,6 +23,8 @@ class Login extends React.PureComponent<Props, State> {
     this.setState({ isLoading: true });
 
     setTimeout(() => {
+      login('@TODO');
+
       history.push(routeTo('dashboard'));
 
       this.setState({ isLoading: false });

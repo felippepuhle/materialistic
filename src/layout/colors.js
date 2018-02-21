@@ -6,8 +6,8 @@ const Colors = {
   silver: '#AAAAAA',
   grey: '#404040',
 
-  main: '#f14d23',
-  alternative: '#36a3a4',
+  main: '#30afb5',
+  alternative: '#ff4842',
 };
 
 export default Colors;

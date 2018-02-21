@@ -2,12 +2,15 @@
 import buildPath from '../utils/buildPath';
 import createLoadable from '../utils/createLoadable';
 
+// Middlewares
+import authenticationMiddleware from '../middlewares/authenticationMiddleware';
+
 // Template
 import DashboardTemplate from '../../components/dashboard/DashboardTemplate';
 
 const dashboardRoutes = {
   path: buildPath(),
-  component: DashboardTemplate,
+  component: authenticationMiddleware(DashboardTemplate),
   routes: [
     {
       name: 'dashboard',
